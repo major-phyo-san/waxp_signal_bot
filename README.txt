@@ -27,7 +27,7 @@ http://<your-server-ip>:5000/docs
 
 Systemd service
 
-sudo nano /etc/systemd/system/waxp-bot-runner
+sudo nano /etc/systemd/system/waxp-bot-runner.service
 
 ========
 [Unit]
@@ -44,7 +44,7 @@ Group=www-data
 
 WorkingDirectory=/path/to/working-dir
 Environment="PATH=/path/to/working-dir/venv/bin"
-ExecStart=python3 main.py
+ExecStart=/path/to/working-dir/venv/bin/python3 main.py
 
 [Install]
 WantedBy=multi-user.target
